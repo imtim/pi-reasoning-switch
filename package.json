@@ -1,0 +1,26 @@
+{
+  "name": "pi-reasoning-switch",
+  "version": "1.0.0",
+  "description": "Pi extension: view or set the model's thinking level via /reasoning. Per-model memory, unified All-models level, clamps to model capabilities.",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "author": "YuktimH <3926061+imtim@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imtim/pi-reasoning-switch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imtim/pi-reasoning-switch/issues"
+  },
+  "homepage": "https://github.com/imtim/pi-reasoning-switch#readme",
+  "files": ["extensions", "README.md", "LICENSE"],
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": ["./extensions"]
+  }
+}
