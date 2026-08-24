@@ -21,7 +21,7 @@ pi install /path/to/pi-reasoning-switch
 | `/reasoning` | Open an interactive selector listing every level the current model supports, including `off` — plus a `Memory: ON/OFF` toggle and an `All models` unified-level row |
 | `/reasoning <level>` | Set a level directly: `off`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max` |
 
-Tab-completion lists the levels after `/reasoning `. `/thinking` is kept as an alias.
+Tab-completion lists the levels after `/reasoning `. (pi's own built-in `/thinking` command is unrelated to this extension and keeps working.)
 
 ## Behavior
 

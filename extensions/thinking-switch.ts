@@ -12,7 +12,12 @@
  * The selector options follow pi's model configuration: non-reasoning models
  * only offer "off", and levels marked null in the model's thinkingLevelMap are
  * hidden. The requested level is clamped by pi to the active model's
- * capabilities. /thinking is kept as an alias.
+ * capabilities.
+ *
+ * Note: there is deliberately no /thinking command here — newer pi versions
+ * ship a built-in /thinking command, and an extension command with the same
+ * name would never run (pi intercepts it first) while producing a conflict
+ * warning at startup.
  */
 
 import type { ThinkingLevel } from "@earendil-works/pi-agent-core";
@@ -273,19 +278,6 @@ export default function thinkingSwitch(pi: ExtensionAPI) {
 
   pi.registerCommand("reasoning", {
     description: "Set thinking level (off|minimal|low|medium|high|xhigh|max)",
-    getArgumentCompletions: (prefix: string): AutocompleteItem[] | null => {
-      const items = LEVELS.filter((value) => value.startsWith(prefix)).map((value) => ({
-        value,
-        label: value,
-      }));
-      return items.length > 0 ? items : null;
-    },
-    handler: handleCommand,
-  });
-
-  // Alias for the old command name.
-  pi.registerCommand("thinking", {
-    description: "Alias for /reasoning",
     getArgumentCompletions: (prefix: string): AutocompleteItem[] | null => {
       const items = LEVELS.filter((value) => value.startsWith(prefix)).map((value) => ({
         value,

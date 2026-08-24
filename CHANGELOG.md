@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- `/thinking` alias — newer pi versions ship a built-in `/thinking` command that intercepts the name before extension commands run, so the alias was dead weight and triggered a startup conflict warning. Use `/reasoning`; the built-in `/thinking` keeps working as before.
+
 ## [1.0.0] - 2026-08-19
 
 ### Added
